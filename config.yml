@@ -1,0 +1,20 @@
+device: 'cpu'
+resume_checkpoint: 'None'
+target_model: 'models/target_model'
+policy_model: 'models/policy_model'
+#------------------------train params-----------------------
+learning_rate: 0.005  # for a RMS prop optimizer
+momentum: 0.9  # for RMS
+gamma: 0.95  # gamma coefficient from Belmann equation
+epsilon: 1.0  # initial epsilon (exploration) value
+epsilon_min: 0.01  # minimum epsilon value
+epsilon_decay: 0.0000004  # amount epsilon decays each iteration
+memory_size: 10000  # memory size
+batch_size: 32  # batch size
+save_freq: 10  # how often the model saves to the file
+num_epochs: 100  # number of epochs to run the model
+window_size: 15  # size of the state window
+num_tech_indicators: 0  # number of technical indicators we use in each state
+#------------------------data params-------------------------
+stock_name: '^HSI'
+
